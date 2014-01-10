@@ -97,17 +97,20 @@ module.exports = function(grunt) {
       });
     }
 
-    if (options.copy) {
-      add('Copied packages to ' + targetDir.grey, function(callback) {
-        copy(options, callback);
-      });
-    }
+    // removed function to copy and clean source and target directories
+    // will use .bowerrc to specify the location files are stored
+    
+    // if (options.copy) {
+    //   add('Copied packages to ' + targetDir.grey, function(callback) {
+    //     copy(options, callback);
+    //   });
+    // }
 
-    if (options.cleanBowerDir) {
-      add('Cleaned bower dir ' + bowerDir.grey, function(callback) {
-        clean(bowerDir, callback);
-      });
-    }
+    // if (options.cleanBowerDir) {
+    //   add('Cleaned bower dir ' + bowerDir.grey, function(callback) {
+    //     clean(bowerDir, callback);
+    //   });
+    // }
 
     async.series(tasks, done);
   });
